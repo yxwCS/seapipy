@@ -228,7 +228,7 @@ class create_lattice_3d:
             centroid_vector = np.array(body_centroid) - np.array(v1)
             dot_product = np.dot(normal, centroid_vector)
 
-            if dot_product < 0:  # inward normal
+            if dot_product > 0:  # inward normal
                 oriented_body.append(-face)
             else:
                 oriented_body.append(face)
