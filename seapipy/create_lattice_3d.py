@@ -104,7 +104,7 @@ class create_lattice_3d:
 
                 if dis > max_distance:
                     is_distant = True
-                    print("Face", face, "is distant with number", index)
+            
                     break
 
             if is_distant:
