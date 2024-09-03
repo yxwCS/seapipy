@@ -134,10 +134,10 @@ class create_lattice_3d:
     def filter_faces_by_bodies(self, filtered_faces, bodies_by_faces):
         final_faces = {}
         for face, i in filtered_faces.items():
-            print("Face", face, "has index", i)
+            
             for body in bodies_by_faces:
                 if i in body:
-                    print("Face", face, "is in bodies_by_faces")
+                    
                     final_faces[i] = face
         return final_faces
 
@@ -159,9 +159,6 @@ class create_lattice_3d:
 
 
     def rearrange_faces_bodies(self, vertices, faces, bodies):
-        """
-        Rearrange the vertices, faces and bodies to share faces between bodies.
-        """
         vertex_dict = {i: vertices[i] for i in range(len(vertices))}
 
         used_vertices = set()
@@ -205,10 +202,6 @@ class create_lattice_3d:
         return volume_list
 
     def rearrange_vertex_indices(self, valid_vertices, edges, faces, bodies):
-        """
-        Rearranges the indices of valid vertices so that they start from 1 and are consecutive.
-        Updates edges and bodies accordingly. Faces content remains unchanged, only indices are updated.
-        """
         sorted_valid_vertices = sorted(valid_vertices.keys())
         old_to_new_v = {old_index: new_index for new_index, old_index in enumerate(sorted_valid_vertices, start=1)}
 
