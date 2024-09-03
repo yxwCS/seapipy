@@ -25,27 +25,7 @@ class create_lattice_3d:
         ]
         return grid_values
 
-    def generate_edges_and_faces_from_vertices(self, faces):
-        edges = {}
-        edge_map = {}
-        edge_num = 1
-        edge_faces = []
-
-        for face in faces:
-            edge_face = []
-            for ii in range(len(face)):
-                v0 = face[ii]
-                v1 = face[(ii + 1) % len(face)]
-                edge = (v0, v1) if v0 < v1 else (v1, v0)
-                if edge not in edge_map:
-                    edges[edge_num] = edge
-                    edge_map[edge] = edge_num
-                    edge_map[(edge[1], edge[0])] = -edge_num
-                    edge_num += 1
-                edge_face.append(edge_map[(v0, v1)])
-            edge_faces.append(edge_face)
-
-        return edges, edge_faces
+    
 
     def generate_edges_and_faces_from_vertices_v2(self, faces_dict):
         edges = {}
