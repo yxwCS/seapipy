@@ -3,7 +3,7 @@ from scipy.spatial import Voronoi, ConvexHull
 from scipy.spatial import distance
 
 
-class create_lattice_3d:
+class lattice_3d:
     def __init__(self, number_cells_x, number_cells_y, number_cells_z, standard_deviation=0.1, spatial_step=20):
         self.number_cells_x = number_cells_x
         self.number_cells_y = number_cells_y
