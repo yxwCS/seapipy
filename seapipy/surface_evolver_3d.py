@@ -6,7 +6,7 @@ class SurfaceEvolver:
         self.faces = faces
         self.cells = cells
 
-        self.density_values = {tuple(map(tuple, np.round(np.array(key), 3))): round(value, 3) for key, value in density_values.items()}
+        self.density_values = {key: round(value, 3) for key, value in self.density_values.items()}
         self.volume_values = volume_values
         self.polygonal = polygonal
         self.fe_file = io.StringIO()
