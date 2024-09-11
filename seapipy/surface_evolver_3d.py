@@ -13,7 +13,7 @@ class SurfaceEvolver:
 
     def generate_fe_file(self):
         self.fe_file.write("SPACE_DIMENSION 3 \n")
-        self.fe_file.write("SCALE 0.005 FIXED\n")
+        self.fe_file.write("SCALE 0.05 FIXED\n")
         # self.fe_file.write("STRING \n")
         self.fe_file.write("\n")
 
